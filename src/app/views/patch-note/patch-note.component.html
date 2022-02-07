@@ -1,0 +1,18 @@
+<br>
+<br>
+
+<div *ngIf="patchNote">
+  <mat-card>
+    <mat-card-title>_Patch note</mat-card-title>
+    <mat-card-subtitle>Últimas atualizações</mat-card-subtitle>
+    <span>{{patchNote.commits[0].message}}</span>
+    <mat-card-actions>
+      <button (click)="savePatchNote()" mat-button>ACEITO</button>
+      <button (click)="patchNote = null!" mat-button>VER DEPOIS</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+

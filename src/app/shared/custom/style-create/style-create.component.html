@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>Novo estilo</mat-card-title>
+  <form action="">
+      <mat-form-field>
+          <input matInput placeholder="Nome do estilo"
+            [(ngModel)]="custom.name"  name="name"
+
+          >
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput placeholder="Cor do cartão"
+            [(ngModel)]="custom.background" name="card"
+          >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Cor da fonte"
+            [(ngModel)]="custom.fontcolor" name="font"
+        >
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="createStyle()" class="btn-save">
+      Salvar
+  </button>
+
+  <button mat-raised-button (click)="cancel()" class="btn-cancel">
+      Cancelar
+  </button>
+</mat-card>

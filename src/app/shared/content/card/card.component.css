@@ -1,0 +1,17 @@
+.example-card {
+  max-width: 400px;
+  margin-top: 25px;
+}
+
+.mat-card{
+  background-color: #3F51B5;
+  color: white;
+}
+
+.mat-card-subtitle{
+  color: white;
+}
+
+.mat-button{
+  background-color: #293785;
+}

@@ -1,0 +1,101 @@
+.form-card {
+  margin: 2rem 0;
+  background-color: #FFF;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  margin: 1%;
+}
+
+label{
+  color:#8000D5;
+  padding: 2px 8px;
+  font-weight: 500;
+}
+
+/*form */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+select {
+  border-radius: 8px;
+  padding: 5px;
+}
+
+/*form */
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.example-card-2 {
+  margin: 2rem 0;
+  max-width: 1080px;
+}
+
+.toggle-content {
+  margin-top: 18px;
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  background-color: #FFF;
+  border: none;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.toggle:hover {
+  background-color: #ccc;
+  color: #FFF;
+}
+
+.toggle:active {
+  background-color: #8000D5;
+  color: #FFF;
+}
+
+/* button */
+.button-container{
+  background-color: #FFF;
+  display: flex;
+  justify-content: flex-start;
+  padding: 14px;
+}
+
+.button-container .button {
+  background-color: #8000D5;
+  border-radius: 8px;
+  border-style: none;
+  color: white;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 2px;
+  font-size: 12px;
+}
+
+.button-container .button:hover{
+  background-color: #7000C4;
+  opacity: .8;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+}
