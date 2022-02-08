@@ -13,6 +13,8 @@ export class ReportCreateComponent implements OnInit {
     name: '',
   }
 
+  mostrar: boolean = false;
+
   toppings = new FormControl();
   toppingList: string[] = [
   'Nome completo do solicitante',
@@ -65,5 +67,9 @@ export class ReportCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/reports'])
+  }
+
+  toggle () {
+    this.mostrar = !this.mostrar;
   }
 }

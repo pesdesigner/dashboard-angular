@@ -1,4 +1,71 @@
-<h2>Relatório personalizado</h2>
+<h2>Relatório personalizado sugestão</h2>
+
+<div class="form-card">
+  <form action="">
+    <div class="form-container">
+      <label for="name">Nome do relatório</label>
+        <input type="text" id="name" placeholder="Digite o nome do relatório"
+          [(ngModel)]="report.name"  name="name"
+        >
+
+      <label for="col">Selecione as colunas para a criação do relatório</label>
+        <div class="toggle-content" [(ngModel)]="toppings" multiple>
+          <button *ngFor="let topping of toppingList" [value]="topping" (click)="toggle()" class="toggle">
+            {{topping}}
+          </button>
+        </div>
+    </div>
+
+    <div class="button-container">
+      <button (click)="createReport()" class="button">Salvar</button>
+      <button (click)="cancel()" class="button">Voltar</button>
+    </div>
+
+  </form>
+</div>
+
+<!-- Modal option -->
+
+<ng-container #modal *ngIf="mostrar">
+  <div class="modal">
+
+        <form action="">
+          <div class="form-container">
+            <label for="name">E-mail do solicitante</label>
+              <input type="text" id="name" placeholder="Digite o nome do relatório"
+                [(ngModel)]="report.name"  name="name"
+              >
+
+            <label for="col">Selecione</label>
+              <select class="toggle-content" [(ngModel)]="toppings" multiple>
+                <option *ngFor="let topping of toppingList" [value]="topping" class="toggle">
+                  {{topping}}
+                </option>
+              </select>
+          </div>
+
+          <div class="button-container">
+            <button (click)="createReport()" class="button">Salvar</button>
+            <button class="button">Voltar</button>
+          </div>
+
+        </form>
+
+  </div>
+  <div (click)="toggle()" class="overlay"></div>
+</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>Relatório personalizado</h2>
 
 <div class="form-card">
   <form action="">
@@ -23,30 +90,4 @@
 
   </form>
 
-</div>
-
-<h2>Relatório personalizado sugestão</h2>
-
-<div class="form-card">
-  <form action="">
-    <div class="form-container">
-      <label for="name">Nome do relatório</label>
-        <input type="text" id="name" placeholder="Digite o nome do relatório"
-          [(ngModel)]="report.name"  name="name"
-        >
-
-      <label for="col">Selecione as colunas para a criação do relatório</label>
-        <div class="toggle-content" [(ngModel)]="toppings" multiple>
-          <button *ngFor="let topping of toppingList" [value]="topping" class="toggle">
-            {{topping}}
-          </button>
-        </div>
-    </div>
-
-    <div class="button-container">
-      <button (click)="createReport()" class="button">Salvar</button>
-      <button (click)="cancel()" class="button">Voltar</button>
-    </div>
-
-  </form>
-</div>
+</div> -->
