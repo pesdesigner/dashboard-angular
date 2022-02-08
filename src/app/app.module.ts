@@ -25,7 +25,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { HomeComponent } from './views/home/home.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -88,7 +88,8 @@ import { ReportTableComponent } from './views/report-page/report-table/report-ta
     MatSelectModule,
     MatDialogModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDatepickerModule
   ],
   providers: [{
     provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS
