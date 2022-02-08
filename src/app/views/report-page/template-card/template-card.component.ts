@@ -57,10 +57,6 @@ export class TemplateCardComponent implements OnInit {
     'ID Chamado',
     'Email do solicitante (enduser)',
     'Período de abertura',
-    'Período de fechamento',
-    'Detalhamento da solicitação',
-    'Natureza',
-    'Tópico',
     'Severidade',
     'Tipo de CI',
     'Resumo'
@@ -72,7 +68,17 @@ export class TemplateCardComponent implements OnInit {
     'Tipo de change',
     'Competência',
     'Natureza',
-    'Tópico',
+    'Tipo de CI',
+    'Nome completo do solicitante',
+    'Registrado por (e-mail)',
+    'ID Chamado',
+    'Email do solicitante (enduser)',
+  ]
+
+  toppingTemplate3: string[] = [
+    'Nome completo do solicitante',
+    'Registrado por (e-mail)',
+    'ID Chamado',
     'Severidade',
     'Tipo de CI',
     'Nome completo do solicitante',
@@ -101,5 +107,6 @@ export class TemplateCardComponent implements OnInit {
     this.toppingList = this.toppingList
     this.toppingTemplate1 = this.toppingTemplate1
     this.toppingTemplate2 = this.toppingTemplate2
+    this.toppingTemplate3 = this.toppingTemplate3
   }
 }

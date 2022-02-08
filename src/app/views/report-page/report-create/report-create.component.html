@@ -2,39 +2,18 @@
 
 <div class="form-card">
   <form action="">
-    <label for="name">Nome do relatório</label>
-      <input type="text" id="name" placeholder="Digite o nome do relatório"
-        [(ngModel)]="report.name"  name="name"
-      >
+    <div class="form-container">
+      <label for="name">Nome do relatório</label>
+        <input type="text" id="name" placeholder="Digite o nome do relatório"
+          [(ngModel)]="report.name"  name="name"
+        >
 
-    <label for="col">Selecione as colunas para a criação do relatório</label>
-        <select [(ngModel)]="toppings" multiple id="col">
-          <option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</option>
+      <label for="col">Selecione as colunas para a criação do relatório</label>
+        <select class="toggle-content" [(ngModel)]="toppings" multiple>
+          <option *ngFor="let topping of toppingList" [value]="topping" class="toggle">
+            {{topping}}
+          </option>
         </select>
-
-        <div class="button-container">
-          <button (click)="createReport()" class="button">Salvar</button>
-          <button (click)="cancel()" class="button">Voltar</button>
-        </div>
-  </form>
-
-</div>
-
-<h2>Relatório personalizado</h2>
-
-<div class="form-card">
-  <form action="">
-    <label for="name">Nome do relatório</label>
-      <input type="text" id="name" placeholder="Digite o nome do relatório"
-        [(ngModel)]="report.name"  name="name"
-      >
-
-    <label for="col">Selecione as colunas para a criação do relatório</label>
-
-    <div class="toggle-content" [(ngModel)]="toppings">
-      <button *ngFor="let topping of toppingList" [value]="topping" class="toggle">
-        {{topping}}
-      </button>
     </div>
 
     <div class="button-container">
@@ -46,61 +25,28 @@
 
 </div>
 
+<h2>Relatório personalizado sugestão</h2>
 
-
-<h2>Sugestão para seleção das colunas</h2>
-
-<mat-card class="example-card-2">
-  <mat-card-title>Nome do relatório</mat-card-title>
+<div class="form-card">
   <form action="">
-      <mat-form-field>
-          <input matInput placeholder="Digite o nome do relatório"
-            [(ngModel)]="report.name"  name="name"
-          >
-      </mat-form-field>
+    <div class="form-container">
+      <label for="name">Nome do relatório</label>
+        <input type="text" id="name" placeholder="Digite o nome do relatório"
+          [(ngModel)]="report.name"  name="name"
+        >
 
-      <p>Relatórios - Escolha os filtros para a criação do relatório</p>
+      <label for="col">Selecione as colunas para a criação do relatório</label>
+        <div class="toggle-content" [(ngModel)]="toppings" multiple>
+          <button *ngFor="let topping of toppingList" [value]="topping" class="toggle">
+            {{topping}}
+          </button>
+        </div>
+    </div>
 
-        <mat-button-toggle-group class="toggle-content" [(ngModel)]="toppings" name="columns" aria-label="columns" multiple>
-          <mat-button-toggle *ngFor="let topping of toppingList" [value]="topping">
-              {{topping}}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
+    <div class="button-container">
+      <button (click)="createReport()" class="button">Salvar</button>
+      <button (click)="cancel()" class="button">Voltar</button>
+    </div>
 
   </form>
-  <button mat-raised-button (click)="createReport()" class="btn-save">
-      Salvar
-  </button>
-
-  <button mat-raised-button (click)="cancel()" class="btn-cancel">
-      Voltar
-  </button>
-</mat-card>
-
-
-<mat-card class="example-card">
-  <mat-card-title>Nome do relatório</mat-card-title>
-  <form action="">
-      <mat-form-field>
-          <input matInput placeholder="Digite o nome do relatório"
-            [(ngModel)]="report.name"  name="name"
-          >
-      </mat-form-field>
-
-      <p>Relatórios - Escolha os filtros para a criação do relatório</p>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Selecione as colunas</mat-label>
-        <mat-select [(ngModel)]="toppings" multiple>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-  </form>
-  <button mat-raised-button (click)="createReport()" class="btn-save">
-      Salvar
-  </button>
-
-  <button mat-raised-button (click)="cancel()" class="btn-cancel">
-      Voltar
-  </button>
-</mat-card>
+</div>
