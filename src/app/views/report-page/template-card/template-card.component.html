@@ -8,9 +8,11 @@
           <div class="tab">
             <input type="checkbox" id="chck1">
             <label class="tab-label" for="chck1">Colunas disponíveis</label>
-            <div class="tab-content" *ngFor="let topping of toppingTemplate1">
-              <span>{{topping}}</span>
-            </div>
+              <div class="tab-content" *ngFor="let topping of toppingTemplate1">
+                <button class="toggle">
+                  {{topping}}
+                </button>
+              </div>
           </div>
         </div>
       </div>
@@ -33,7 +35,9 @@
               <input type="checkbox" id="chck3">
               <label class="tab-label" for="chck3">Colunas disponíveis</label>
               <div class="tab-content" *ngFor="let topping of toppingTemplate2">
-                <span>{{topping}}</span>
+                <button class="toggle">
+                  {{topping}}
+                </button>
               </div>
             </div>
           </div>
@@ -57,8 +61,10 @@
               <div class="tab">
                 <input type="checkbox" id="chck2">
                 <label class="tab-label" for="chck2">Colunas disponíveis</label>
-                <div class="tab-content">
-                 Colunas disponíveis
+                <div class="tab-content" *ngFor="let topping of toppingTemplate3">
+                  <button class="toggle">
+                    {{topping}}
+                  </button>
                 </div>
               </div>
             </div>
