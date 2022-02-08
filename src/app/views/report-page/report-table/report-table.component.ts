@@ -8,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class ReportTableComponent implements OnInit {
 
   displayedColumns =
-      ['name', 'position', 'weight', 'symbol', 'position', 'weight', 'symbol', 'star'];
+  [
+    'name',
+    'email',
+    'id_chamado',
+    'enduser',
+    'abertura',
+    'fechamento',
+    'data_limite',
+    'chamados_ativos',
+    'vencido',
+    'reativado',
+    'registro_usuario',
+    'status',
+    'clientes_disponiveis',
+    'incluir_cliente_relacionado'
+    ];
   dataSource = ELEMENT_DATA;
 
   constructor() { }
@@ -18,22 +33,118 @@ export class ReportTableComponent implements OnInit {
 
 }
 
-export interface PeriodicElement {
+export interface columnElement {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  email: string;
+  id_chamado: string;
+  enduser: string;
+  abertura: string;
+  fechamento: string;
+  data_limite: string;
+  chamados_ativos: string;
+  vencido: string;
+  reativado: string;
+  registro_usuario: string;
+  status: string;
+  clientes_disponiveis: string;
+  incluir_cliente_relacionado: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+const ELEMENT_DATA: columnElement[] = [
+  {
+    name: 'nome teste',
+    email: 'email@teste',
+    id_chamado: '45678',
+    enduser: 'enduser',
+    abertura: 'abertura',
+    fechamento: 'fechamento',
+    data_limite: '10/05/1901',
+    chamados_ativos: '46456',
+    vencido: '12/06/1902',
+    reativado: 'dados reativado',
+    registro_usuario: 'registro usuário',
+    status: 'ativo',
+    clientes_disponiveis: 'lista clientes',
+    incluir_cliente_relacionado: 'cliente relacionado'
+  },
+  {
+    name: 'nome teste',
+    email: 'email@teste',
+    id_chamado: '45678',
+    enduser: 'enduser',
+    abertura: 'abertura',
+    fechamento: 'fechamento',
+    data_limite: '10/05/1901',
+    chamados_ativos: '46456',
+    vencido: '12/06/1902',
+    reativado: 'dados reativado',
+    registro_usuario: 'registro usuário',
+    status: 'ativo',
+    clientes_disponiveis: 'lista clientes',
+    incluir_cliente_relacionado: 'cliente relacionado'
+  },
+  {
+    name: 'nome teste',
+    email: 'email@teste',
+    id_chamado: '45678',
+    enduser: 'enduser',
+    abertura: 'abertura',
+    fechamento: 'fechamento',
+    data_limite: '10/05/1901',
+    chamados_ativos: '46456',
+    vencido: '12/06/1902',
+    reativado: 'dados reativado',
+    registro_usuario: 'registro usuário',
+    status: 'ativo',
+    clientes_disponiveis: 'lista clientes',
+    incluir_cliente_relacionado: 'cliente relacionado'
+  },
+  {
+    name: 'nome teste',
+    email: 'email@teste',
+    id_chamado: '45678',
+    enduser: 'enduser',
+    abertura: 'abertura',
+    fechamento: 'fechamento',
+    data_limite: '10/05/1901',
+    chamados_ativos: '46456',
+    vencido: '12/06/1902',
+    reativado: 'dados reativado',
+    registro_usuario: 'registro usuário',
+    status: 'ativo',
+    clientes_disponiveis: 'lista clientes',
+    incluir_cliente_relacionado: 'cliente relacionado'
+  },
+  {
+    name: 'nome teste',
+    email: 'email@teste',
+    id_chamado: '45678',
+    enduser: 'enduser',
+    abertura: 'abertura',
+    fechamento: 'fechamento',
+    data_limite: '10/05/1901',
+    chamados_ativos: '46456',
+    vencido: '12/06/1902',
+    reativado: 'dados reativado',
+    registro_usuario: 'registro usuário',
+    status: 'ativo',
+    clientes_disponiveis: 'lista clientes',
+    incluir_cliente_relacionado: 'cliente relacionado'
+  },
+  {
+    name: 'nome teste',
+    email: 'email@teste',
+    id_chamado: '45678',
+    enduser: 'enduser',
+    abertura: 'abertura',
+    fechamento: 'fechamento',
+    data_limite: '10/05/1901',
+    chamados_ativos: '46456',
+    vencido: '12/06/1902',
+    reativado: 'dados reativado',
+    registro_usuario: 'registro usuário',
+    status: 'ativo',
+    clientes_disponiveis: 'lista clientes',
+    incluir_cliente_relacionado: 'cliente relacionado'
+  },
 ];

@@ -1,39 +1,95 @@
-<div class="example-container mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+<div class="container">
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name" sticky>
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+  <div class="topnav">
+    <h2><b>Relatório template (nome)</b></h2>
+    <div class="search-container">
+      <form action="">
+        <input type="text" placeholder="Nome da coluna..." name="search">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource">
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nome completo do solicitante</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Registrado por (e-mail)</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
 
-    <!-- Star Column -->
-    <ng-container matColumnDef="star" stickyEnd>
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <mat-icon>more_vert</mat-icon>
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="id_chamado">
+        <th mat-header-cell *matHeaderCellDef>ID Chamado</th>
+        <td mat-cell *matCellDef="let element"> {{element.id_chamado}} </td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      <ng-container matColumnDef="enduser">
+        <th mat-header-cell *matHeaderCellDef>Email do solicitante (enduser)</th>
+        <td mat-cell *matCellDef="let element"> {{element.enduser}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="abertura" sticky>
+        <th mat-header-cell *matHeaderCellDef>Período de abertura</th>
+        <td mat-cell *matCellDef="let element"> {{element.abertura}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fechamento">
+        <th mat-header-cell *matHeaderCellDef>Período de fechamento</th>
+        <td mat-cell *matCellDef="let element"> {{element.fechamento}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="data_limite">
+        <th mat-header-cell *matHeaderCellDef>Período Data Limite</th>
+        <td mat-cell *matCellDef="let element"> {{element.data_limite}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="chamados_ativos">
+        <th mat-header-cell *matHeaderCellDef>Chamados Ativos</th>
+        <td mat-cell *matCellDef="let element"> {{element.chamados_ativos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="vencido">
+        <th mat-header-cell *matHeaderCellDef>Vencido</th>
+        <td mat-cell *matCellDef="let element"> {{element.vencido}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="reativado">
+        <th mat-header-cell *matHeaderCellDef>Reativado</th>
+        <td mat-cell *matCellDef="let element"> {{element.reativado}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="registro_usuario"> <!-- sticky -->
+        <th mat-header-cell *matHeaderCellDef>Registrado pelo usuário</th>
+        <td mat-cell *matCellDef="let element"> {{element.registro_usuario}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="clientes_disponiveis">
+        <th mat-header-cell *matHeaderCellDef>Clientes Disponíveis</th>
+        <td mat-cell *matCellDef="let element"> {{element.clientes_disponiveis}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="incluir_cliente_relacionado">
+        <th mat-header-cell *matHeaderCellDef>Incluir cliente relacionado</th>
+        <td mat-cell *matCellDef="let element"> {{element.incluir_cliente_relacionado}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <div class="button-container">
+    <button class="button">Fechar</button>
+    <button class="button">Exportar</button>
+  </div>
 </div>
