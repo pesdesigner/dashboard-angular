@@ -1,3 +1,5 @@
+import { HomePageComponent } from './pages/home/home-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportCreateComponent } from './views/report-page/report-create/report-create.component';
 import { ReportPageComponent } from './views/report-page/report-page.component';
 import { StyleDeleteComponent } from './shared/custom/style-delete/style-delete.component';
@@ -38,6 +40,10 @@ const routes: Routes = [
     path: "reports/create",
     component: ReportCreateComponent
   },
+  {
+    path: "components",
+    component: HomePageComponent
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<br>
+<br>
+<h1>Componente principal</h1>
+
+<h3>Nome: {{nome}}</h3>
+
+<button (click)="alterarNome()" class="btn btn-primary">
+  Alterar nome
+</button>
+
+<app-filho
+  [nomeFilho]="nome"
+  (alterouNomeFilho)="filhoAlterouNome($event)">
+
+</app-filho>
