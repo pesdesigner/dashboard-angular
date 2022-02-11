@@ -1,4 +1,3 @@
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
@@ -71,7 +70,6 @@ import { ReportTableComponent } from './views/report-page/report-table/report-ta
     ModalComponent,
     ReportTableComponent,
     HomePageComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +95,8 @@ import { ReportTableComponent } from './views/report-page/report-table/report-ta
     MatExpansionModule,
     MatDatepickerModule,
     ComponentsModule,
-    PagesModule
+    PagesModule,
+    MatTableModule
   ],
   providers: [{
     provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS

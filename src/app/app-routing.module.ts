@@ -1,3 +1,5 @@
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { CardsComponent } from './pages/home/cards/cards.component';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportCreateComponent } from './views/report-page/report-create/report-create.component';
@@ -43,6 +45,14 @@ const routes: Routes = [
   {
     path: "components",
     component: HomePageComponent
+  },
+  {
+    path: "components/cards",
+    component: CardsComponent
+  },
+  {
+    path: "components/pricing",
+    component: PricingComponent
   }
 ];
 

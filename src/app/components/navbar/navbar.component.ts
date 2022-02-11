@@ -8,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  mensagem: string = 'Bem-vindo!'
+
   constructor(
-    public dataService: DataService
+    private dataService: DataService
   ) { }
 
   ngOnInit(): void {
+    this.dataService.nome$.subscribe(texto => {
+      this.mensagem = texto;
+      console.log('navbar:', texto);
+    })
   }
 
 }

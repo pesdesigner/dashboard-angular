@@ -2,6 +2,7 @@
 
 <br>
 <br>
+
 <h1>Componente principal</h1>
 
 <h3>Nome: {{nome}}</h3>
@@ -13,5 +14,14 @@
 <app-filho
   [nomeFilho]="nome"
   (alterouNomeFilho)="filhoAlterouNome($event)">
-
 </app-filho>
+
+<br>
+<hr>
+<br>
+
+<h1>Comunicação Observables</h1>
+
+<button (click)="alterarMensagem()">
+  Alterar mensagem
+</button>

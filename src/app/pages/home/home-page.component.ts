@@ -28,4 +28,8 @@ export class HomePageComponent implements OnInit {
     this.dataService.nomeUsuario = novoNome
   }
 
+  alterarMensagem(){
+    this.dataService.nome$.emit('Areli Souza')
+  }
+
 }

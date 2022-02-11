@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<section>
+  <div class="container">
+    <div class="card">
+      <span>{{table1}}</span>
+        <button (click)="showTable(table1)">view</button>
+    </div>
+    <div class="card">
+      <span>{{table2}}</span>
+      <button (click)="showTable(table2)">view</button>
+    </div>
+    <div class="card">
+      <span>{{table3}}</span>
+      <div class="btn">
+        <button (click)="showTable(table3)">view</button><button class="btn-success">editar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-table">
+   <div *ngIf="table">
+    <app-table
+      [table]="table"
+      (hideTable)="hideTable($event)"
+      [tableName]="tableName"
+    ></app-table>
+   </div>
+  </div>
+</section>
