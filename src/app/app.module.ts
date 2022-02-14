@@ -1,3 +1,6 @@
+import { HomePageComponent } from './pages/home/home-page.component';
+import { PagesModule } from './pages/pages.module';
+import { ComponentsModule } from './components/components.module';
 import { NavComponent } from './shared/template/nav/nav.component';
 import { HeaderComponent } from './shared/template/header/header.component';
 
@@ -66,6 +69,7 @@ import { ReportTableComponent } from './views/report-page/report-table/report-ta
     TemplateCardComponent,
     ModalComponent,
     ReportTableComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,7 +93,11 @@ import { ReportTableComponent } from './views/report-page/report-table/report-ta
     MatDialogModule,
     MatIconModule,
     MatExpansionModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ComponentsModule,
+    PagesModule,
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [{
     provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS

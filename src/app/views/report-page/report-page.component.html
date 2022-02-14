@@ -4,12 +4,13 @@
 
 <app-template-card></app-template-card>
 
-<button mat-button mat-dialog-close (click)="tableFullScreen()">Tela cheia</button>
-
-
-<h2>Relatório (nome)</h2>
-<app-report-table></app-report-table>
-
-<section *ngIf="tableScreen">
-
-</section>
+<!-- <div class="container-table">
+  <div *ngIf="table">
+   <app-report-table
+     [table]="table"
+     (hideTable)="hideTable($event)"
+     (showTable)="showTable($event)"
+     [tableName]="tableName"
+   ></app-report-table>
+  </div>
+ </div> -->

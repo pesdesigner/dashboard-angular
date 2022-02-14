@@ -1,0 +1,26 @@
+<br>
+<br>
+
+<hr>
+
+<h1>Componente Filho</h1>
+
+<h4>Nome Filho: {{nomeFilho}}</h4>
+
+<button (click)="alterarNome()" class="btn btn-primary">
+  Alterar nome Filho
+</button>
+
+<br>
+
+<hr>
+<h1>Observables - Mensagem</h1>
+
+<!-- <h4>{{mensagem}}</h4> -->
+
+<h4 *ngIf="dataService.nome$ | async as nome; else noData">
+  {{nome}}
+</h4>
+<ng-template #noData>
+ <h4>Sem informações</h4>
+</ng-template>
