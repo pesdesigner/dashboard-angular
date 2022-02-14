@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IColumn } from './IColumn';
+import { ReportService } from './../report.service';
+import { DataService } from './../../../services/data.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-report-table',
@@ -6,6 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report-table.component.css']
 })
 export class ReportTableComponent implements OnInit {
+
+  @Input() table: boolean = false;
+  @Input() tableName: string = 'sem nome'
+  @Output() hideTable = new EventEmitter<boolean>();
+
+  dados: Observable<IColumn[]>;
 
   displayedColumns =
   [
@@ -23,128 +33,26 @@ export class ReportTableComponent implements OnInit {
     'status',
     'clientes_disponiveis',
     'incluir_cliente_relacionado'
-    ];
-  dataSource = ELEMENT_DATA;
+  ];
 
-  constructor() { }
+  constructor(
+    private dataService: DataService,
+    private ReportService: ReportService
+  ) {
+     // this.ReportService.list().subscribe(dados => this.dados = dados)
+     this.dados = this.ReportService.list();
+    }
 
   ngOnInit(): void {
+    this.tableName = this.tableName;
+  }
+
+ //   dataSource = this.dados;
+
+  closeTable(){
+    this.table = false
+    this.hideTable.emit(this.table)
+    this.dataService.table = this.table
   }
 
 }
-
-export interface columnElement {
-  name: string;
-  email: string;
-  id_chamado: string;
-  enduser: string;
-  abertura: string;
-  fechamento: string;
-  data_limite: string;
-  chamados_ativos: string;
-  vencido: string;
-  reativado: string;
-  registro_usuario: string;
-  status: string;
-  clientes_disponiveis: string;
-  incluir_cliente_relacionado: string;
-}
-
-const ELEMENT_DATA: columnElement[] = [
-  {
-    name: 'nome teste',
-    email: 'email@teste',
-    id_chamado: '45678',
-    enduser: 'enduser',
-    abertura: 'abertura',
-    fechamento: 'fechamento',
-    data_limite: '10/05/1901',
-    chamados_ativos: '46456',
-    vencido: '12/06/1902',
-    reativado: 'dados reativado',
-    registro_usuario: 'registro usuário',
-    status: 'ativo',
-    clientes_disponiveis: 'lista clientes',
-    incluir_cliente_relacionado: 'cliente relacionado'
-  },
-  {
-    name: 'nome teste',
-    email: 'email@teste',
-    id_chamado: '45678',
-    enduser: 'enduser',
-    abertura: 'abertura',
-    fechamento: 'fechamento',
-    data_limite: '10/05/1901',
-    chamados_ativos: '46456',
-    vencido: '12/06/1902',
-    reativado: 'dados reativado',
-    registro_usuario: 'registro usuário',
-    status: 'ativo',
-    clientes_disponiveis: 'lista clientes',
-    incluir_cliente_relacionado: 'cliente relacionado'
-  },
-  {
-    name: 'nome teste',
-    email: 'email@teste',
-    id_chamado: '45678',
-    enduser: 'enduser',
-    abertura: 'abertura',
-    fechamento: 'fechamento',
-    data_limite: '10/05/1901',
-    chamados_ativos: '46456',
-    vencido: '12/06/1902',
-    reativado: 'dados reativado',
-    registro_usuario: 'registro usuário',
-    status: 'ativo',
-    clientes_disponiveis: 'lista clientes',
-    incluir_cliente_relacionado: 'cliente relacionado'
-  },
-  {
-    name: 'nome teste',
-    email: 'email@teste',
-    id_chamado: '45678',
-    enduser: 'enduser',
-    abertura: 'abertura',
-    fechamento: 'fechamento',
-    data_limite: '10/05/1901',
-    chamados_ativos: '46456',
-    vencido: '12/06/1902',
-    reativado: 'dados reativado',
-    registro_usuario: 'registro usuário',
-    status: 'ativo',
-    clientes_disponiveis: 'lista clientes',
-    incluir_cliente_relacionado: 'cliente relacionado'
-  },
-  {
-    name: 'nome teste',
-    email: 'email@teste',
-    id_chamado: '45678',
-    enduser: 'enduser',
-    abertura: 'abertura',
-    fechamento: 'fechamento',
-    data_limite: '10/05/1901',
-    chamados_ativos: '46456',
-    vencido: '12/06/1902',
-    reativado: 'dados reativado',
-    registro_usuario: 'registro usuário',
-    status: 'ativo',
-    clientes_disponiveis: 'lista clientes',
-    incluir_cliente_relacionado: 'cliente relacionado'
-  },
-  {
-    name: 'nome teste',
-    email: 'email@teste',
-    id_chamado: '45678',
-    enduser: 'enduser',
-    abertura: 'abertura',
-    fechamento: 'fechamento',
-    data_limite: '10/05/1901',
-    chamados_ativos: '46456',
-    vencido: '12/06/1902',
-    reativado: 'dados reativado',
-    registro_usuario: 'registro usuário',
-    status: 'ativo',
-    clientes_disponiveis: 'lista clientes',
-    incluir_cliente_relacionado: 'cliente relacionado'
-  },
-];

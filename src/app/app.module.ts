@@ -96,7 +96,8 @@ import { ReportTableComponent } from './views/report-page/report-table/report-ta
     MatDatepickerModule,
     ComponentsModule,
     PagesModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [{
     provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS

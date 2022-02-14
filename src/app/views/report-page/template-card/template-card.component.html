@@ -1,7 +1,7 @@
 <div class="flex-container">
 <div class="card">
   <div class="container">
-    <h4><b>Nome do Template #1</b></h4>
+    <h4><b>{{table1}}</b></h4>
     <div class="row">
       <div class="col">
         <div class="tabs">
@@ -20,14 +20,13 @@
   </div>
   <hr>
 <div class="button-container">
-  <button class="button">Visualizar</button>
-  <button class="button">Editar</button>
+  <button (click)="showTable(table1)" class="button">Visualizar</button>
 </div>
 </div>
 
   <div class="card">
     <div class="container">
-      <h4><b>Nome do Template #2</b></h4>
+      <h4><b>{{table2}}</b></h4>
       <div class="row">
         <div class="col">
           <div class="tabs">
@@ -46,14 +45,13 @@
     </div>
     <hr>
   <div class="button-container">
-    <button class="button">Visualizar</button>
-    <button class="button">Editar</button>
+    <button class="button" (click)="showTable(table2)">Visualizar</button>
   </div>
   </div>
 
     <div class="card">
       <div class="container">
-        <h4><b>Nome do Template #3</b></h4>
+        <h4><b>{{table3}}</b></h4>
         <div class="row">
           <div class="col">
             <div class="tabs">
@@ -72,9 +70,19 @@
       </div>
       <hr>
     <div class="button-container">
-      <button class="button">Visualizar</button>
-      <button class="button">Editar</button>
+      <button class="button" (click)="showTable(table3)">Visualizar</button>
+      <button class="button" (click)="editTable()">Editar</button>
     </div>
     </div>
 
 </div>
+
+<div class="container-table">
+  <div *ngIf="table">
+   <app-report-table
+     [table]="table"
+     (hideTable)="hideTable($event)"
+     [tableName]="tableName"
+   ></app-report-table>
+  </div>
+ </div>

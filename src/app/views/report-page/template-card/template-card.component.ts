@@ -1,6 +1,7 @@
 import { ModalComponent } from './modal/modal.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-template-card',
@@ -8,6 +9,15 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./template-card.component.css']
 })
 export class TemplateCardComponent implements OnInit {
+
+  @Output() onTable = new EventEmitter<boolean>();
+
+  table: boolean = false
+  tableName: string = 'Template personalizado #3'
+
+  table1: string = 'Nome do Template #1'
+  table2: string = 'Nome do Template #2'
+  table3: string = this.tableName
 
   open = ``;
   panelOpenState1 = false;
@@ -88,8 +98,20 @@ export class TemplateCardComponent implements OnInit {
   ]
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private dataService: DataService
   ) { }
+
+  ngOnInit(): void {
+    this.toppingList = this.toppingList
+    this.toppingTemplate1 = this.toppingTemplate1
+    this.toppingTemplate2 = this.toppingTemplate2
+    this.toppingTemplate3 = this.toppingTemplate3
+
+    this.table1 = this.table1
+    this.table2 = this.table2
+    this.table3 = this.table3
+  }
 
   openReport() {
     const dialogRef = this.dialog.open(ModalComponent);
@@ -103,10 +125,21 @@ export class TemplateCardComponent implements OnInit {
     this.open = `open`;
   }
 
-  ngOnInit(): void {
-    this.toppingList = this.toppingList
-    this.toppingTemplate1 = this.toppingTemplate1
-    this.toppingTemplate2 = this.toppingTemplate2
-    this.toppingTemplate3 = this.toppingTemplate3
+  showTable(tn: any){
+    this.table = true
+    this.dataService.table = this.table
+    this.tableName = tn
+    this.onTable.emit(this.table)
+    this.dataService.table = this.table
   }
+
+  hideTable(opt: boolean){
+    this.table = opt
+    this.dataService.table = opt
+  }
+
+  editTable(){
+    console.log('edit page')
+  }
+
 }
